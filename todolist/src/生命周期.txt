@@ -1,0 +1,5 @@
+生命周期函数指在某一个时刻会自动执行的函数render(){}
+
+componentWillMount()
+render()
+componentDidMount()
