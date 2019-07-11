@@ -1,4 +1,20 @@
-.input {
-    width: 300px;
-    height: 30px;
+.fade-enter, .fade-appear {
+    opacity: 0;
+}
+.fade-enter-active, .fade-appear-active  {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+.fade-enter-done {
+    opacity: 1;
+}
+.fade-exdit {
+    opacity: 1;
+}
+.fade-exdit-active {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+.fade-exdit-done {
+    opacity: 0;
 }

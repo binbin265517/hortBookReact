@@ -6,28 +6,33 @@ class TodoItem extends Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
+    // setState
+    shouldComponentUpdate(nextProps, nextState) {
+        if (nextProps.content !== this.props.content) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     render() {
-        let { content, test } = this.props
+        console.log('child render')
+        let { content } = this.props
         return (
             <li
                 onClick={this.handleClick}
-                dangerouslySetInnerHTML={{__html: `${test} - ${content}`}}
+                dangerouslySetInnerHTML={{ __html: content }}
             ></li>
         )
     }
     handleClick() {
         const { deleteItem, index } = this.props;
         deleteItem(index);
-    }
+    } 
 }
 TodoItem.propTypes = {
     content: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     deleteItem: PropTypes.func,
-    index: PropTypes.number,
-    test: PropTypes.string.isRequired
-}
-TodoItem.defaultProps = {
-    test: 'hello world'
+    index: PropTypes.number
 }
 
 export default TodoItem;
